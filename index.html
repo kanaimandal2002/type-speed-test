@@ -1,1 +1,23 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Speed Test</h1>
+        <div class="stats">
+            <div>Time: <span id="timer">60</span>s</div>
+            <div>WPM: <span id="wpm">0</span></div>
+            <div>Accuracy: <span id="accuracy">0</span>%</div>
+        </div>
+        <div id="quote" class="quote"></div>
+        <textarea id="input" class="input" placeholder="Start typing here..." disabled></textarea>
+        <button id="start" class="btn">Start Test</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
