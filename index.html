@@ -3,21 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Speed Test</title>
+    <title>Advanced Typing Speed Test</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Typing Speed Test</h1>
-        <div class="stats">
-            <div>Time: <span id="timer">60</span>s</div>
-            <div>WPM: <span id="wpm">0</span></div>
-            <div>Accuracy: <span id="accuracy">0</span>%</div>
+        <header>
+            <h1>Typing Speed Test</h1>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </header>
+
+        <div class="settings">
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            
+            <select id="time">
+                <option value="30">30 Seconds</option>
+                <option value="60" selected>60 Seconds</option>
+                <option value="120">120 Seconds</option>
+            </select>
+            
+            <button id="startBtn">Start Test</button>
+            <button id="newQuoteBtn" disabled>New Quote</button>
         </div>
-        <div id="quote" class="quote"></div>
-        <textarea id="input" class="input" placeholder="Start typing here..." disabled></textarea>
-        <button id="start" class="btn">Start Test</button>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-value" id="timer">60</div>
+                <div class="stat-label">Seconds Left</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="wpm">0</div>
+                <div class="stat-label">Words Per Minute</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="accuracy">0%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="errors">0</div>
+                <div class="stat-label">Errors</div>
+            </div>
+        </div>
+
+        <div class="quote-container">
+            <div id="quote"></div>
+        </div>
+
+        <textarea id="input" placeholder="Click 'Start Test' and begin typing here..." disabled></textarea>
+
+        <div class="results" id="results">
+            <h2>Test Results</h2>
+            <div class="results-stats">
+                <div class="result-box">
+                    <div class="result-value" id="result-wpm">0</div>
+                    <div class="stat-label">WPM</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-value" id="result-accuracy">0%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-value" id="result-time">0s</div>
+                    <div class="stat-label">Time</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-value" id="result-errors">0</div>
+                    <div class="stat-label">Errors</div>
+                </div>
+            </div>
+
+            <div class="history">
+                <h3>Recent Tests</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>WPM</th>
+                            <th>Accuracy</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <!-- History will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
