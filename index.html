@@ -3,98 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Typing Speed Test</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Typing Speed Test</h1>
-            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <p class="subtitle">Test and improve your typing speed and accuracy</p>
         </header>
-
-        <div class="settings">
-            <select id="difficulty">
-                <option value="easy">Easy</option>
-                <option value="medium" selected>Medium</option>
-                <option value="hard">Hard</option>
-            </select>
+        
+        <div class="main-content">
+            <div class="test-section">
+                <div class="stats-container">
+                    <div class="stat">
+                        <div class="stat-value" id="wpm">0</div>
+                        <div class="stat-label">WPM</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="accuracy">0%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="timer">60</div>
+                        <div class="stat-label">Time Left</div>
+                    </div>
+                </div>
+                
+                <div class="quote-display" id="quote-display"></div>
+                
+                <div class="input-area">
+                    <textarea id="typing-input" placeholder="Click start and begin typing here..." disabled></textarea>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn-start" id="start-btn"><i class="fas fa-play"></i> Start</button>
+                    <button class="btn-reset" id="reset-btn"><i class="fas fa-redo"></i> Reset</button>
+                </div>
+            </div>
             
-            <select id="time">
-                <option value="30">30 Seconds</option>
-                <option value="60" selected>60 Seconds</option>
-                <option value="120">120 Seconds</option>
-            </select>
+            <div class="settings">
+                <h2><i class="fas fa-cog"></i> Test Settings</h2>
+                <div class="setting-group">
+                    <label for="time-select">Test Duration</label>
+                    <select id="time-select">
+                        <option value="30">30 Seconds</option>
+                        <option value="60" selected>60 Seconds</option>
+                        <option value="120">120 Seconds</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="difficulty-select">Difficulty</label>
+                    <select id="difficulty-select">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
             
-            <button id="startBtn">Start Test</button>
-            <button id="newQuoteBtn" disabled>New Quote</button>
-        </div>
-
-        <div class="stats">
-            <div class="stat-box">
-                <div class="stat-value" id="timer">60</div>
-                <div class="stat-label">Seconds Left</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="wpm">0</div>
-                <div class="stat-label">Words Per Minute</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="accuracy">0%</div>
-                <div class="stat-label">Accuracy</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-value" id="errors">0</div>
-                <div class="stat-label">Errors</div>
-            </div>
-        </div>
-
-        <div class="quote-container">
-            <div id="quote"></div>
-        </div>
-
-        <textarea id="input" placeholder="Click 'Start Test' and begin typing here..." disabled></textarea>
-
-        <div class="results" id="results">
-            <h2>Test Results</h2>
-            <div class="results-stats">
-                <div class="result-box">
-                    <div class="result-value" id="result-wpm">0</div>
-                    <div class="stat-label">WPM</div>
-                </div>
-                <div class="result-box">
-                    <div class="result-value" id="result-accuracy">0%</div>
-                    <div class="stat-label">Accuracy</div>
-                </div>
-                <div class="result-box">
-                    <div class="result-value" id="result-time">0s</div>
-                    <div class="stat-label">Time</div>
-                </div>
-                <div class="result-box">
-                    <div class="result-value" id="result-errors">0</div>
-                    <div class="stat-label">Errors</div>
-                </div>
-            </div>
-
             <div class="history">
-                <h3>Recent Tests</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>WPM</th>
-                            <th>Accuracy</th>
-                            <th>Time</th>
-                        </tr>
-                    </thead>
-                    <tbody id="history-body">
-                        <!-- History will be populated here -->
-                    </tbody>
-                </table>
+                <h2><i class="fas fa-history"></i> Recent Results</h2>
+                <div class="history-list" id="history-list">
+                    <div class="history-item">No tests completed yet</div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h2><i class="fas fa-info-circle"></i> How It Works</h2>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Click Start to begin the test</li>
+                    <li><i class="fas fa-check-circle"></i> Type the text exactly as shown</li>
+                    <li><i class="fas fa-check-circle"></i> Your typing speed (WPM) and accuracy will be calculated</li>
+                    <li><i class="fas fa-check-circle"></i> Try to improve your score with each test!</li>
+                </ul>
+            </div>
+            
+            <div class="result" id="result">
+                <h2>Test Complete!</h2>
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <div class="result-value" id="result-wpm">0</div>
+                        <div class="result-label">WPM</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-value" id="result-accuracy">0%</div>
+                        <div class="result-label">Accuracy</div>
+                    </div>
+                </div>
+                <button class="btn-reset" id="result-reset-btn"><i class="fas fa-redo"></i> Try Again</button>
             </div>
         </div>
+        
+        <footer>
+            <p>Typing Speed Test &copy; 2023</p>
+            <a href="https://github.com/your-username/typing-speed-test" class="github-link" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+        </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
