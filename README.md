@@ -2,6 +2,11 @@
 
 A responsive web application to test and improve your typing speed and accuracy.
 
+
+## Live Demo
+
+You can view a live version of this tool at [(https://kanaimandal2002.github.io/type-speed-test/)]
+
 ## Features
 
 - Real-time WPM (Words Per Minute) calculation
@@ -12,10 +17,6 @@ A responsive web application to test and improve your typing speed and accuracy.
 - Responsive design for all devices
 - Modern, attractive UI
 
-
-## Live Demo
-
-You can view a live version of this tool at [(https://kanaimandal2002.github.io/type-speed-test/)]
 
 ## How to Use
 
