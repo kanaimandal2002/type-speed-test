@@ -28,4 +28,10 @@ You can view a live version of this tool at [(https://kanaimandal2002.github.io/
 
 ## Installation
 
-1. Clone this repository:
+- Simply clone this repository and open index.html in your web browser:
+```bash
+git clone https://github.com/kanaimandal2002/type-speed-test.git
+cd type-speed-test
+open index.html
+```
+No additional dependencies or setup required!
