@@ -15,7 +15,6 @@ You can view a live version of this tool at [(https://kanaimandal2002.github.io/
 - Adjustable test durations (30, 60, 120 seconds)
 - Results history with localStorage persistence
 - Responsive design for all devices
-- Modern, attractive UI
 
 
 ## How to Use
