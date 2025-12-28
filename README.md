@@ -23,7 +23,6 @@ You can view a live version of this tool at [(https://kanaimandal2002.github.io/
 3. Type the text exactly as shown in the display area
 4. Your WPM and accuracy will update in real-time
 5. When the timer ends, your results will be displayed
-6. View your test history in the Recent Results section
 
 ## Installation
 
