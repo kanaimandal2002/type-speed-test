@@ -20,7 +20,6 @@ You can view a live version of this tool at [(https://kanaimandal2002.github.io/
 
 1. Select your preferred test duration and difficulty level
 2. Click the "Start" button to begin the test
-3. Type the text exactly as shown in the display area
 4. Your WPM and accuracy will update in real-time
 5. When the timer ends, your results will be displayed
 
